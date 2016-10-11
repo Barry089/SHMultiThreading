@@ -82,7 +82,7 @@ thread.threadPriority = 1; //设置线程的优先级(0.0 - 1.0, 1.0最高优先
     
     //动态创建线程
 - (void)dynamicCreateThread {
-    [NSThread detachNewThreadSelector:@selector(loadImageSource:) toTarge:self withObject:imgUrl];
+    NSThread *thread = [[NSThread alloc] initWithTarge:self selector:@selector(loadImageSource:) object:imgUrl]; 
     thread.threadPriority = 1; // 设置线程的优先级(0.0 - 1.0, 1.0是最高优先级)
     [thread start];
 }
