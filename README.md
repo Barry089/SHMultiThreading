@@ -10,7 +10,7 @@
 ![文章配图](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/html-programming.jpg?raw=true)
 
 ![文章大纲](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHMultiThreadDG.png?raw=true)
-###1.Basic concepts  ![Tech: 前面加的#号个数表示字体放大程度](https://github.com/Wspace5/SHMultiThreading)
+###一.Basic concepts  ![Tech: 前面加的#号个数表示字体放大程度](https://github.com/Wspace5/SHMultiThreading)
 
 计算机操作系统都有的基本概念，以下概念简单描述。
 
@@ -27,7 +27,7 @@
 * 一个进程可有多个队列。
 * 队列可分并发队列和串行队列。
 
-###2.iOS多线程对比
+###二.iOS多线程对比
 #####1. NSThread
 每个NSThread对象对应一个线程，真正最原始的线程。
 1) 优点：NSThread 轻量级最低，相对简单。
@@ -45,15 +45,40 @@ Grand Central Dispatch (GCD)是Apple开发的一个多核编程的解决方法�
 2)  处理大量并发数据，又追求性能效率的选择GCD；
 3)  NSThread本人选择通常是做些小测试上使用，当然也可以基于此写个大程序。
 
-###3.场景选择
-1.
-###4.使用方法
+###三.场景选择
+1. **图片异步加载**。这种场景是最常见也是必不可少的。异步加载图片又分成两种，说明一下：
+第一种，在UI主线程开启新线程加载图片，加载完成刷新UI；
+第二种，依然是在主线程开启新线程，顺序不定的加载图片，加载完成刷新UI。
+2. **创作工具上的异步**。这个跟上边任务条度道理
+场景一，app本地创作10个章节内容
+场景二，app本地创作列表中有3本小说未发表，同时发表创作列表中的3本小说，自然考虑**并行队列执行**发表。
 
+###四.使用方法
+第三标题场景选择内容实现 先留下一悬念，具体实现还是先熟知一下各自的API。
 #####1.NSThread
 **1.1) 三种实现开启线程方式：**
-①
-②
-③
+①.动态实例化
+ 
+NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(loadImageSource:) object:imgUrl];
+thread.threadPriority = 1; //设置线程的优先级(0.0 - 1.0, 1.0最高优先级)
+[thread sstart];
+
+②.静态实例化
+
+[NSThread detachNewThreadSelector:@selector(loadImageSource:) toTarget:self withObject:imgUrl];
+
+③.隐式实例化
+
+[self performSelectorInBackground:@selector(loadImageSource:) withObject:imgUrl];
+
+有了以上的知识点，可以试着编写场景中的“图片加载”的基本功能了。
+
+**1.2) 使用这三种方式编写代码**
+    
+    //动态创建线程
+- (void)dynamicCreateThread {
+    [NSThread detachNewThreadSelector:@selector(loadImageSource:) toTarge:self withObject:imgUrl];
+}
 ④
 ⑤
 ⑥
