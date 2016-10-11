@@ -11,6 +11,7 @@
 
 ![文章大纲](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHMultiThreadDG.png?raw=true)
 ###1.Basic concepts  [![Tech: 前面加的#号个数表示字体放大程度]]
+
 计算机操作系统都有的基本概念，以下概念简单描述。
 
 1. 进程：一个具有一定独立功能的程序关于某个数据集合的一次运行活动。可以理解成一个运行中的应用程序。
