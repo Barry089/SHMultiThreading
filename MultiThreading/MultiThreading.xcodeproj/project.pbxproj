@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0304BD1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD0304BC1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg */; settings = {ASSET_TAGS = (); }; };
+		AD0304BF1DACB0E200AEE65E /* html-programming.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD0304BE1DACB0E200AEE65E /* html-programming.jpg */; settings = {ASSET_TAGS = (); }; };
 		ADDDE5151DABB62100CDD9B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE5141DABB62100CDD9B4 /* main.m */; };
 		ADDDE5181DABB62100CDD9B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE5171DABB62100CDD9B4 /* AppDelegate.m */; };
 		ADDDE51B1DABB62100CDD9B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE51A1DABB62100CDD9B4 /* ViewController.m */; };
@@ -15,7 +17,6 @@
 		ADDDE5231DABB62100CDD9B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDDE5211DABB62100CDD9B4 /* LaunchScreen.storyboard */; };
 		ADDDE52E1DABB62100CDD9B4 /* MultiThreadingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE52D1DABB62100CDD9B4 /* MultiThreadingTests.m */; };
 		ADDDE5391DABB62100CDD9B4 /* MultiThreadingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE5381DABB62100CDD9B4 /* MultiThreadingUITests.m */; };
-		ADDDE5481DABBC5B00CDD9B4 /* webwxgetmsgimg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ADDDE5471DABBC5B00CDD9B4 /* webwxgetmsgimg.jpeg */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD0304BC1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = webwxgetmsgimg.jpeg; path = ../../Pictures/webwxgetmsgimg.jpeg; sourceTree = "<group>"; };
+		AD0304BE1DACB0E200AEE65E /* html-programming.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "html-programming.jpg"; path = "../../Pictures/html-programming.jpg"; sourceTree = "<group>"; };
 		ADDDE5101DABB62100CDD9B4 /* MultiThreading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiThreading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDDE5141DABB62100CDD9B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADDDE5161DABB62100CDD9B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,7 +55,6 @@
 		ADDDE5341DABB62100CDD9B4 /* MultiThreadingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiThreadingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDDE5381DABB62100CDD9B4 /* MultiThreadingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadingUITests.m; sourceTree = "<group>"; };
 		ADDDE53A1DABB62100CDD9B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADDDE5471DABBC5B00CDD9B4 /* webwxgetmsgimg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = webwxgetmsgimg.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +148,8 @@
 		ADDDE5461DABBB3000CDD9B4 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
-				ADDDE5471DABBC5B00CDD9B4 /* webwxgetmsgimg.jpeg */,
+				AD0304BE1DACB0E200AEE65E /* html-programming.jpg */,
+				AD0304BC1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg */,
 			);
 			name = Pictures;
 			sourceTree = "<group>";
@@ -254,7 +257,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDDE5481DABBC5B00CDD9B4 /* webwxgetmsgimg.jpeg in Resources */,
+				AD0304BF1DACB0E200AEE65E /* html-programming.jpg in Resources */,
+				AD0304BD1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg in Resources */,
 				ADDDE5231DABB62100CDD9B4 /* LaunchScreen.storyboard in Resources */,
 				ADDDE5201DABB62100CDD9B4 /* Assets.xcassets in Resources */,
 				ADDDE51E1DABB62100CDD9B4 /* Main.storyboard in Resources */,
@@ -508,6 +512,7 @@
 				ADDDE53F1DABB62100CDD9B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADDDE5401DABB62100CDD9B4 /* Build configuration list for PBXNativeTarget "MultiThreadingTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +521,7 @@
 				ADDDE5421DABB62100CDD9B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADDDE5431DABB62100CDD9B4 /* Build configuration list for PBXNativeTarget "MultiThreadingUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +530,7 @@
 				ADDDE5451DABB62100CDD9B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
