@@ -10,7 +10,7 @@
 ![文章配图](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/html-programming.jpg?raw=true)
 
 ![文章大纲](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHMultiThreadDG.png?raw=true)
-###1.Basic concepts
+###1.Basic concepts  [Tech: 前面加的#号个数表示字体放大程度]
 计算机操作系统都有的基本概念，以下概念简单描述。
 
 1. 进程：一个具有一定独立功能的程序关于某个数据集合的一次运行活动。可以理解成一个运行中的应用程序。
@@ -20,6 +20,7 @@
 5. 队列：装载线程任务的队形结构。
 6. 并发：线程执行可以同时一起进行。
 7. 串行：线程执行只能依次逐一先后有序的执行。
+[Tech warning: 标号的"."后面加个空格就能换行]
 
 ***注意 ⚠***
 * 一个进程可有多个线程。
@@ -29,7 +30,7 @@
 ###2.iOS多线程对比
 #####1. NSThread
 每个NSThread对象对应一个线程，真正最原始的线程。
-1)  优点：NSThread 轻量级最低，相对简单。
+1) 优点：NSThread 轻量级最低，相对简单。
 2)  缺点：手动管理所有的线程活动，如生命周期、线程同步、睡眠等。
 #####2. NSOperation 
 自带线程管理的抽象类
