@@ -140,6 +140,48 @@ thread.threadPriority = 1; //设置线程的优先级(0.0 - 1.0, 1.0最高优先
 
 显然动态创建线程多了几行代码，其实就是那几行代码，如果重复编写数遍那是一件多么不爽的事情。首次看来静态方法创建线程和隐式创建线程显得比较方便，简洁。从知识结构来说，讲到这里应该讲述一下**线程锁**，鉴于并不常用和文章过长就不再赘述，有兴趣的可以自行查阅。
 #####2. NSOperation
+主要的实现方式：结合NSOperation和NSOperationQueue实现多线程编程。
+
+* 实例化NSOperation的子类，绑定执行的操作。
+* 创建NSOperationQueue队列，将NSOperation实例添加进来
+* 系统会自动将NSOperationQueue队列中检测 NSOperation 并取出和执行NSOperation的操作。
+
+**2.1) 使用 NSOperation的子类实现创建线程。**
+①.NSInvocationOperation创建线程。
+
+NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadImageSource:) object:imgUrl];
+//[invocationOperation start];//直接会在当前线程中执行
+NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+[queue addOperation:invocationOperation];
+
+②.NSBlockOperation创建线程
+NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+[self loadImageSource:imgUrl];
+}];
+
+NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+[queue addOperation:blockOperation];
+
+③.自定义NSOperation子类实现main方法
+
+实现main方法
+
+- (void)main {
+// Doing something...
+}
+
+* 创建线程实例并添加到队列中
+
+LoadImageOperation *imageOperation = [LoadImageOperation new];
+imageOperation.loadDelegate = self;
+imageOparation.imgUrl = imgUrl;
+
+NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+[queue addOperation:imageOperation];
+
+**2.2) 使用这三种方式编写代码**
+
+④
 
 ![NSOperation多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread2.gif?raw=true)
 ![GCD多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread3.gif?raw=true)
