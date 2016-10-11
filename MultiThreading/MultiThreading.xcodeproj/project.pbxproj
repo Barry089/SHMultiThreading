@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD0304BD1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD0304BC1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg */; settings = {ASSET_TAGS = (); }; };
-		AD0304BF1DACB0E200AEE65E /* html-programming.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD0304BE1DACB0E200AEE65E /* html-programming.jpg */; settings = {ASSET_TAGS = (); }; };
 		ADDDE5151DABB62100CDD9B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE5141DABB62100CDD9B4 /* main.m */; };
 		ADDDE5181DABB62100CDD9B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE5171DABB62100CDD9B4 /* AppDelegate.m */; };
 		ADDDE51B1DABB62100CDD9B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE51A1DABB62100CDD9B4 /* ViewController.m */; };
@@ -37,8 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD0304BC1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = webwxgetmsgimg.jpeg; path = ../../Pictures/webwxgetmsgimg.jpeg; sourceTree = "<group>"; };
-		AD0304BE1DACB0E200AEE65E /* html-programming.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "html-programming.jpg"; path = "../../Pictures/html-programming.jpg"; sourceTree = "<group>"; };
 		ADDDE5101DABB62100CDD9B4 /* MultiThreading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiThreading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDDE5141DABB62100CDD9B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADDDE5161DABB62100CDD9B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,7 +109,6 @@
 				ADDDE51F1DABB62100CDD9B4 /* Assets.xcassets */,
 				ADDDE5211DABB62100CDD9B4 /* LaunchScreen.storyboard */,
 				ADDDE5241DABB62100CDD9B4 /* Info.plist */,
-				ADDDE5461DABBB3000CDD9B4 /* Pictures */,
 				ADDDE5131DABB62100CDD9B4 /* Supporting Files */,
 			);
 			path = MultiThreading;
@@ -143,15 +138,6 @@
 				ADDDE53A1DABB62100CDD9B4 /* Info.plist */,
 			);
 			path = MultiThreadingUITests;
-			sourceTree = "<group>";
-		};
-		ADDDE5461DABBB3000CDD9B4 /* Pictures */ = {
-			isa = PBXGroup;
-			children = (
-				AD0304BE1DACB0E200AEE65E /* html-programming.jpg */,
-				AD0304BC1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg */,
-			);
-			name = Pictures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD0304BF1DACB0E200AEE65E /* html-programming.jpg in Resources */,
-				AD0304BD1DACB0AF00AEE65E /* webwxgetmsgimg.jpeg in Resources */,
 				ADDDE5231DABB62100CDD9B4 /* LaunchScreen.storyboard in Resources */,
 				ADDDE5201DABB62100CDD9B4 /* Assets.xcassets in Resources */,
 				ADDDE51E1DABB62100CDD9B4 /* Main.storyboard in Resources */,
