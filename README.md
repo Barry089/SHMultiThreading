@@ -9,7 +9,7 @@
 
 ![文章配图](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/html-programming.jpg?raw=true)
 
-![文章大纲]()
+![文章大纲](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHMultiThreadDG.png?raw=true)
 ###1.Basic concepts
 计算机操作系统都有的基本概念，以下概念简单描述。
 
@@ -27,23 +27,25 @@
 * 队列可分并发队列和串行队列。
 
 ###2.iOS多线程对比
-####1. NSThread
+#####1. NSThread
 每个NSThread对象对应一个线程，真正最原始的线程。
 1)  优点：NSThread 轻量级最低，相对简单。
 2)  缺点：手动管理所有的线程活动，如生命周期、线程同步、睡眠等。
 #####2. NSOperation 
-1)
-2)
+自带线程管理的抽象类
+1)  优点：自带线程周期管理，操作上可更注重自己的逻辑。
+2)  缺点：面向对象的抽象类，只能实现它或者使用它定义好的两个子类：NSInvocationOpeartion 和 NSBlockOperation.
 #####3. GCD 
-1)
-2)
-3)
+Grand Central Dispatch (GCD)是Apple开发的一个多核编程的解决方法。
+1)  优点：最高效，避开开发陷阱。
+2)  缺点：基于C实现。
 #####4. 如何选择 小结
-1)
-2)
-3)
+1)  简单而安全多选择NSOperation实现多线程即可；
+2)  处理大量并发数据，又追求性能效率的选择GCD；
+3)  NSThread本人选择通常是做些小测试上使用，当然也可以基于此写个大程序。
 
 ###3.场景选择
+1.
 ###4.使用方法
 
 #####1.NSThread
@@ -54,6 +56,6 @@
 ④
 ⑤
 ⑥
-![NSThread多线程加载效果]()
-![NSOperation多线程加载效果]()
-![GCD多线程加载效果]()
+![NSThread多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread1.gif?raw=true)
+![NSOperation多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread2.gif?raw=true)
+![GCD多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread3.gif?raw=true)
