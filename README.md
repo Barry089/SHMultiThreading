@@ -12,7 +12,7 @@
 ![文章大纲](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHMultiThreadDG.png?raw=true)
 ###1.Basic concepts  
 
-![Tech: 前面加的#号个数表示字体放大程度]()
+![Tech: 前面加的#号个数表示字体放大程度](https://github.com/Wspace5/SHMultiThreading)
 
 计算机操作系统都有的基本概念，以下概念简单描述。
 
