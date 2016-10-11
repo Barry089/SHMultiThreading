@@ -47,10 +47,15 @@ Grand Central Dispatch (GCD)是Apple开发的一个多核编程的解决方法�
 
 ###三.场景选择
 1. **图片异步加载**。这种场景是最常见也是必不可少的。异步加载图片又分成两种，说明一下：
+ 
 第一种，在UI主线程开启新线程加载图片，加载完成刷新UI；
+ 
 第二种，依然是在主线程开启新线程，顺序不定的加载图片，加载完成刷新UI。
+
 2. **创作工具上的异步**。这个跟上边任务条度道理
+
 场景一，app本地创作10个章节内容
+
 场景二，app本地创作列表中有3本小说未发表，同时发表创作列表中的3本小说，自然考虑**并行队列执行**发表。
 
 ###四.使用方法
@@ -78,10 +83,63 @@ thread.threadPriority = 1; //设置线程的优先级(0.0 - 1.0, 1.0最高优先
     //动态创建线程
 - (void)dynamicCreateThread {
     [NSThread detachNewThreadSelector:@selector(loadImageSource:) toTarge:self withObject:imgUrl];
+    thread.threadPriority = 1; // 设置线程的优先级(0.0 - 1.0, 1.0是最高优先级)
+    [thread start];
 }
-④
-⑤
-⑥
+
+//静态创建线程
+- (void)staticCreateThread {
+
+[NSThread detachNewThreadSelector:@selector(loadImageSource:) toTarget:self withObject:imgUrl];
+
+}
+
+//隐式创建线程
+- (void)implicitCreateThread {
+[self performSelectorInBackground:@selector(loadImageSource:) withObject:imgUrl];
+}
+
+- (void)loadImageSource:(NSString *)url {
+    NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url];
+    UIImage *image = [UIImage imageWithData:imgData]; 
+    if (imgData!=nil) {
+       [self performSelectorOnMainThread:@selector(refreshImageView:) withObject:image waitUntilDone:YES];
+    }else {
+       NSLog(@"there no image data");
+    }
+}
+
+- (void)refreshImageView:(UIImage *)image {
+    [self.imageView setImage:image];
+}
+
+**1.3) 先看效果图**
 ![NSThread多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread1.gif?raw=true)
+
+**1.4) NSThread的拓展认识**
+①获取当前线程
+
+    NSThread *current = [NSThread currentThread];
+
+②获取主线程
+   
+    NSThread *main = [NSThread mainThread];
+
+③暂停当前线程
+
+   [NSThread sleepForTimeInterval:2];
+
+④线程之间的通信
+
+   //在指定线程上执行操作
+   [self performSelector:@selector(run) onThread:thread withObject:nil waitUntilDone:YES];
+   //在主线程上执行操作
+   [self performSelectorOnMainThread:@selector(run) withObject:nil waitUntilDone:YES];
+   //在当前线程执行操作
+   [self performSelector:@selector(run) withObject:nil];
+
+显然动态创建线程多了几行代码，其实就是那几行代码，如果重复编写数遍那是一件多么不爽的事情。首次看来静态方法创建线程和隐式创建线程显得比较方便，简洁。从知识结构来说，讲到这里应该讲述一下**线程锁**，鉴于并不常用和文章过长就不再赘述，有兴趣的可以自行查阅。
+#####2. NSOperation
+
 ![NSOperation多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread2.gif?raw=true)
 ![GCD多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread3.gif?raw=true)
