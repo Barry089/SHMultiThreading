@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD31D1831DB1D0A90091AF7B /* NSThreadLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31D1821DB1D0A90091AF7B /* NSThreadLoadViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AD31D1871DB1EE5B0091AF7B /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31D1861DB1EE5B0091AF7B /* NSOperationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AD31D18A1DB1EE800091AF7B /* GCDLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31D1891DB1EE800091AF7B /* GCDLoadViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AD31D18F1DB21D3E0091AF7B /* SHloadImgOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31D18E1DB21D3E0091AF7B /* SHloadImgOperation.m */; settings = {ASSET_TAGS = (); }; };
 		ADDDE5151DABB62100CDD9B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE5141DABB62100CDD9B4 /* main.m */; };
 		ADDDE5181DABB62100CDD9B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE5171DABB62100CDD9B4 /* AppDelegate.m */; };
 		ADDDE51B1DABB62100CDD9B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDE51A1DABB62100CDD9B4 /* ViewController.m */; };
@@ -35,6 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD31D1811DB1D0A90091AF7B /* NSThreadLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThreadLoadViewController.h; sourceTree = "<group>"; };
+		AD31D1821DB1D0A90091AF7B /* NSThreadLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSThreadLoadViewController.m; sourceTree = "<group>"; };
+		AD31D1851DB1EE5B0091AF7B /* NSOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationViewController.h; sourceTree = "<group>"; };
+		AD31D1861DB1EE5B0091AF7B /* NSOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationViewController.m; sourceTree = "<group>"; };
+		AD31D1881DB1EE800091AF7B /* GCDLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDLoadViewController.h; path = GCD/GCDLoadViewController.h; sourceTree = "<group>"; };
+		AD31D1891DB1EE800091AF7B /* GCDLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDLoadViewController.m; path = GCD/GCDLoadViewController.m; sourceTree = "<group>"; };
+		AD31D18D1DB21D3E0091AF7B /* SHloadImgOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHloadImgOperation.h; sourceTree = "<group>"; };
+		AD31D18E1DB21D3E0091AF7B /* SHloadImgOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHloadImgOperation.m; sourceTree = "<group>"; };
 		ADDDE5101DABB62100CDD9B4 /* MultiThreading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiThreading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDDE5141DABB62100CDD9B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADDDE5161DABB62100CDD9B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +90,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD31D1841DB1D0B00091AF7B /* NSThread */ = {
+			isa = PBXGroup;
+			children = (
+				AD31D1811DB1D0A90091AF7B /* NSThreadLoadViewController.h */,
+				AD31D1821DB1D0A90091AF7B /* NSThreadLoadViewController.m */,
+			);
+			name = NSThread;
+			sourceTree = "<group>";
+		};
+		AD31D18B1DB1EE960091AF7B /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				AD31D1881DB1EE800091AF7B /* GCDLoadViewController.h */,
+				AD31D1891DB1EE800091AF7B /* GCDLoadViewController.m */,
+			);
+			name = GCD;
+			sourceTree = "<group>";
+		};
+		AD31D18C1DB1EEA10091AF7B /* NSOperation */ = {
+			isa = PBXGroup;
+			children = (
+				AD31D1851DB1EE5B0091AF7B /* NSOperationViewController.h */,
+				AD31D1861DB1EE5B0091AF7B /* NSOperationViewController.m */,
+				AD31D18D1DB21D3E0091AF7B /* SHloadImgOperation.h */,
+				AD31D18E1DB21D3E0091AF7B /* SHloadImgOperation.m */,
+			);
+			name = NSOperation;
+			sourceTree = "<group>";
+		};
 		ADDDE5071DABB62100CDD9B4 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +142,9 @@
 		ADDDE5121DABB62100CDD9B4 /* MultiThreading */ = {
 			isa = PBXGroup;
 			children = (
+				AD31D18C1DB1EEA10091AF7B /* NSOperation */,
+				AD31D18B1DB1EE960091AF7B /* GCD */,
+				AD31D1841DB1D0B00091AF7B /* NSThread */,
 				ADDDE5161DABB62100CDD9B4 /* AppDelegate.h */,
 				ADDDE5171DABB62100CDD9B4 /* AppDelegate.m */,
 				ADDDE5191DABB62100CDD9B4 /* ViewController.h */,
@@ -271,8 +315,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADDDE51B1DABB62100CDD9B4 /* ViewController.m in Sources */,
+				AD31D1871DB1EE5B0091AF7B /* NSOperationViewController.m in Sources */,
 				ADDDE5181DABB62100CDD9B4 /* AppDelegate.m in Sources */,
+				AD31D18A1DB1EE800091AF7B /* GCDLoadViewController.m in Sources */,
 				ADDDE5151DABB62100CDD9B4 /* main.m in Sources */,
+				AD31D18F1DB21D3E0091AF7B /* SHloadImgOperation.m in Sources */,
+				AD31D1831DB1D0A90091AF7B /* NSThreadLoadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

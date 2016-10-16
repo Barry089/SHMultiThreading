@@ -317,10 +317,53 @@ dispatch_async(urls_queue, ^{
 });
 
 **3.3) 对比多任务执行**
-异步加载图片时大部分app都有的问题
-![GCD多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread3.gif?raw=true)
+异步加载图片是大部分App都有的问题，那么加载图片是按循序加载完成之后才刷新UI呢？还是不按顺序加载UI呢？显然大部分的希望各自加载各自的图片，各自刷新。以下就是模拟这种场景。
 
-①
-②
-③
-④
+①先后执行，加载两张图片为例
+
+dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+UIImage *image1 = [self loadImage:imgUrl1];
+UIImage *image2 = [self loadImage:imgUrl2];
+
+dispatch_async(dispatch_get_main_queue(), ^{
+self.imageView1.image = image1;
+self.imageView2.image = image2;
+});
+});
+②并行队列执行，也是以加载两张图片为例
+
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+dispatch_async(queue, ^{
+
+dispatch_group_t group = dispatch_group_create();
+
+__block UIImage *image1 = nil;
+__block UIImage *image2 = nil;
+
+dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+image1 = [self loadImage:imgUrl1];
+});
+
+dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+image2 = [self loadImage:imgUrl2];
+});
+
+dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+self.imageView1.image = image1;
+self.imageView2.image = image2;
+
+});
+});
+
+①中，等到两张图片加载完成后一起刷新，②就是典型的异步并行的例子，不需要理会各自图片加载的先后问题，完成加载图片刷新UI即可。从加载图片中来说，第一种不太适合食用，但是对于在上边场景选择的时候的创作工具来说有很大的好处，首先得异步进行，然后异步中有得按顺序执行几个任务，比如上传章节内容。因此，我们可以灵活考虑使用这两个多线程任务执行方式，实现各种场景。
+**3.4) 编码实现**
+以上3.3的内容99%代码一样，就不提供一个稍微整体的代码了。看看下边的效果图吧。
+**3.5) 效果图如下**
+![GCD多线程加载效果](https://github.com/Wspace5/SHMultiThreading/blob/master/Pictures/SHmultiThread3.gif?raw=true)
+###五.源码地址
+##### ***[https://github.com/Wspace5/SHMultiThreading.git](https://github.com/Wspace5/SHMultiThreading.git)***
+
+##### ......
+
